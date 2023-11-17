@@ -22,6 +22,7 @@
   "dependencies": {
     "@electron-toolkit/preload": "^2.0.0",
     "@electron-toolkit/utils": "^2.0.0",
+    "@types/styled-components": "^5.1.30",
     "electron-updater": "^6.1.1",
     "styled-components": "^6.1.1"
   },
