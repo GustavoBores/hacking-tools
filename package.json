@@ -22,7 +22,6 @@
   "dependencies": {
     "@electron-toolkit/preload": "^2.0.0",
     "@electron-toolkit/utils": "^2.0.0",
-    "@types/styled-components": "^5.1.30",
     "electron-updater": "^6.1.1",
     "styled-components": "^6.1.1"
   },
@@ -33,6 +32,7 @@
     "@types/node": "^18.17.5",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "@types/styled-components": "^5.1.30",
     "@vitejs/plugin-react": "^4.0.4",
     "electron": "^25.6.0",
     "electron-builder": "^24.6.3",
