@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-const rainbowAnimation = keyframes`
+const animationSMain = keyframes`
   0% {
     background-position: 0% 50%;
   }
@@ -12,17 +12,14 @@ const rainbowAnimation = keyframes`
   }
 `;
 
-export const SMain = styled.main<{ $animation_rgb: boolean; }>`
+export const SMain = styled.main<{ $rainbow_animation: boolean; }>`
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 3px solid transparent;
+  background: ${ props => props.$rainbow_animation ? "linear-gradient(to left, #00C853, #B2FF59)" : "#000" };
   background-size: 600% 600%;
-  animation: ${rainbowAnimation} 6s linear infinite;
-  transition: all 1s;
-
-  background: ${ 
-    props => props.$animation_rgb ? "linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red)" : "#000" 
-  };
+  animation: ${animationSMain} 6s linear infinite;
+  transition: 1s;
 `;

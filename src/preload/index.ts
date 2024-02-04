@@ -1,16 +1,22 @@
-import { contextBridge } from "electron"
-import { electronAPI } from "@electron-toolkit/preload"
+import { 
+  contextBridge, 
+  ipcRenderer, 
+} from "electron"
 
 class PreloadApp {
-  
-  constructor() {    
-    this.customAPISforRenderer()
+
+  constructor() {
+    this.setupRendererAPI()
   }
 
-  public customAPISforRenderer() {
-    contextBridge.exposeInMainWorld("electron", electronAPI)
+  private setupRendererAPI(): void {
+    contextBridge.exposeInMainWorld("electron", {
+      auth: {
+        setToken: (token: string) => ipcRenderer.send("set-token", token),
+        delToken: () => ipcRenderer.send("del-token"),
+      }
+    })
   }
-
 }
 
 new PreloadApp()
